@@ -4,11 +4,30 @@ using UnityEngine;
 
 public class FlyingEar : MonoBehaviour
 {
+    public float earSpeed;
 
+    public float maxRadius;
+
+    [Header("Camera position")]
+
+    public Transform cameraTransform;
+
+    [Header("Key binds")]
+    //  public Input keyUp;
+
+    // Input key binds for the "flying ear"
+    public float up; 
+    public float down;
+    public float left;
+    public float right;
     private float distance;
+
+
     // Start is called before the first frame update
+
     void Start()
     {
+        resetPosition();
         
     }
 
@@ -53,5 +72,10 @@ public class FlyingEar : MonoBehaviour
             transform.Translate(0, 0, distance);
         }
 
+    }
+    // Resets theposition of the ear to the position of the camera
+    void resetPosition()
+    {
+        transform.position = cameraTransform.position;
     }
 }
