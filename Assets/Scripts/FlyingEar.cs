@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FlyingEar : MonoBehaviour
 {
-
+    private const int Y = 1;
     private float distance;
     // Start is called before the first frame update
     void Start()
@@ -15,13 +15,15 @@ public class FlyingEar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Debug.Log("Alpha1 key was pressed.");
 
             distance = 0;
 
-            transform.Translate(0, 0, distance);
+            transform.localPosition = new Vector3(0, Y, distance);
 
         }
 
@@ -31,7 +33,7 @@ public class FlyingEar : MonoBehaviour
 
             distance = 5;
 
-            transform.Translate(0, 0, distance);
+            transform.localPosition = new Vector3(0, Y, distance);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
@@ -40,7 +42,7 @@ public class FlyingEar : MonoBehaviour
 
             distance = 10;
 
-            transform.Translate(0, 0, distance);
+            transform.localPosition = new Vector3(0, Y, distance);
 
         }
 
@@ -50,7 +52,7 @@ public class FlyingEar : MonoBehaviour
 
             distance = 15;
 
-            transform.Translate(0, 0, distance);
+            transform.localPosition = new Vector3(0, Y, distance);
         }
 
     }
