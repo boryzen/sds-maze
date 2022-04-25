@@ -167,6 +167,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26473a7daaea4284f8c6d842f2ad1add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  earSpeed: 0
+  maxRadius: 0
+  cameraTransform: {fileID: 599552107}
+  up: 0
+  down: 0
+  left: 0
+  right: 0
 --- !u!81 &172424231
 AudioListener:
   m_ObjectHideFlags: 0
@@ -552,7 +559,7 @@ MonoBehaviour:
   CellWidth: 4
   CellHeight: 4
   AddGaps: 1
-  GoalPrefab: {fileID: 0}
+  GoalPrefab: {fileID: 4813467478554972344, guid: c5fbc155d1a0c0a41a4b334ad882a6aa, type: 3}
 --- !u!4 &1595192042
 Transform:
   m_ObjectHideFlags: 0

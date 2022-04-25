@@ -11,71 +11,93 @@ public class FlyingEar : MonoBehaviour
     [Header("Camera position")]
 
     public Transform cameraTransform;
+   
+    // [Header("Key binds")]
+    // //  public Input keyUp;
 
-    [Header("Key binds")]
-    //  public Input keyUp;
-
-    // Input key binds for the "flying ear"
-    public float up; 
-    public float down;
-    public float left;
-    public float right;
-    private float distance;
-
+    // // Input key binds for the "flying ear"
+    // public float up; 
+    // public float down;
+    // public float left;
+    // public float right;
+    
+    private float maxRadiusSq;
 
     // Start is called before the first frame update
 
     void Start()
     {
         resetPosition();
+        maxRadiusSq = maxRadius*maxRadius;
         
     }
 
     // Update is called once per frame
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+    {   
+        float step = Time.deltaTime * earSpeed;
+        // forward movement
+        if (Input.GetKey(KeyCode.Alpha2))
         {
-            Debug.Log("Alpha1 key was pressed.");
+            // Debug.Log("2 key was pressed.");
+            if(checkBounds())
+                transform.Translate(Vector3.forward*step);
 
-            distance = 0;
+        }
+        // left movement
+        if (Input.GetKey(KeyCode.Q))
+        {
+            // Debug.Log("Q key was pressed.");
 
-            transform.Translate(0, 0, distance);
+            if(checkBounds())
+                transform.Translate(Vector3.right*(-step));
+        }
+
+        // right movement
+        if (Input.GetKey(KeyCode.E))
+        {
+            // Debug.Log("E key was pressed.");
+            if(checkBounds())
+                transform.Translate(Vector3.right*step);
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        // back movement
+        if (Input.GetKey(KeyCode.X))
         {
-            Debug.Log("Alpha2 key was pressed.");
-
-            distance = 5;
-
-            transform.Translate(0, 0, distance);
+            // Debug.Log("X key was pressed.");
+            if(checkBounds())
+                transform.Translate(Vector3.forward*(-step));
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKey(KeyCode.Space))
         {
-            Debug.Log("Alpha3 key was pressed.");
-
-            distance = 10;
-
-            transform.Translate(0, 0, distance);
-
+            resetPosition();
+            // Debug.Log("The Ear Reset");
         }
+            // Debug.Log(transform.localPosition.z.ToString() + ", " + transform.localPosition.x.ToString());
+        
+        // freezing the position
 
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            Debug.Log("Alpha4 key was pressed.");
+            transform.rotation = cameraTransform.rotation;
 
-            distance = 15;
-
-            transform.Translate(0, 0, distance);
-        }
-
-    }
+    }  
     // Resets theposition of the ear to the position of the camera
     void resetPosition()
     {
         transform.position = cameraTransform.position;
+    }
+
+    //chacking if the the radius is out of bounds
+    bool checkBounds()
+    {   
+        float radiusSq = transform.localPosition.x*transform.localPosition.x + transform.localPosition.z*transform.localPosition.z;
+        if(radiusSq <= maxRadiusSq)
+            return true;
+        else 
+        {
+            Debug.Log("Ear out of bounds");
+            return false;
+        }
     }
 }
