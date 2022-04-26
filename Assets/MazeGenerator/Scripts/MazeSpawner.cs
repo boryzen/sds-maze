@@ -19,7 +19,7 @@ public class MazeSpawner : MonoBehaviour {
 	public GameObject Floor = null;
 	public GameObject Wall = null;
 	public GameObject Pillar = null;
-	public int Rows = 5;
+    public int Rows = 5;
 	public int Columns = 5;
 	public float CellWidth = 5;
 	public float CellHeight = 5;
@@ -30,7 +30,7 @@ public class MazeSpawner : MonoBehaviour {
 
 	void Start () {
 		if (!FullRandom) {
-			Random.seed = RandomSeed;
+            Random.seed = RandomSeed;
 		}
 		switch (Algorithm) {
 		case MazeGenerationAlgorithm.PureRecursive:
@@ -74,9 +74,10 @@ public class MazeSpawner : MonoBehaviour {
 					tmp = Instantiate(Wall,new Vector3(x,0,z-CellHeight/2)+Wall.transform.position,Quaternion.Euler(0,180,0)) as GameObject;// back
 					tmp.transform.parent = transform;
 				}
-				if(cell.IsGoal && GoalPrefab != null){
+				if(!(!cell.IsGoal || GoalPrefab == null))
+                {
 					tmp = Instantiate(GoalPrefab,new Vector3(x,1,z), Quaternion.Euler(0,0,0)) as GameObject;
-					tmp.transform.parent = transform;
+                    tmp.transform.parent = transform;
 				}
 			}
 		}
