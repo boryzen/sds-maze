@@ -36,49 +36,66 @@ public class FlyingEar : MonoBehaviour
     void Update()
     {   
         float step = Time.deltaTime * earSpeed;
-        // forward movement
+        
+        // Forward movement
         if (Input.GetKey(KeyCode.Alpha2))
         {
             // Debug.Log("2 key was pressed.");
             if(checkBounds())
-                transform.Translate(Vector3.forward*step);
+                transform.Translate(Vector3.forward * step);
 
-        }
-        // left movement
-        if (Input.GetKey(KeyCode.Q))
-        {
-            // Debug.Log("Q key was pressed.");
-
-            if(checkBounds())
-                transform.Translate(Vector3.right*(-step));
+            // Back movement
         }
 
-        // right movement
-        if (Input.GetKey(KeyCode.E))
-        {
-            // Debug.Log("E key was pressed.");
-            if(checkBounds())
-                transform.Translate(Vector3.right*step);
-
-        }
-
-        // back movement
         if (Input.GetKey(KeyCode.X))
         {
             // Debug.Log("X key was pressed.");
             if(checkBounds())
-                transform.Translate(Vector3.forward*(-step));
+                transform.Translate(Vector3.back * step);
         }
 
+
+        // Left movement
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            // Debug.Log("Q key was pressed.");
+             if(checkBounds())
+                transform.Translate(Vector3.left * step);
+        }
+
+        // Right movement
+        if (Input.GetKey(KeyCode.Alpha3))
+        {
+            // Debug.Log("E key was pressed.");
+            if(checkBounds())
+                transform.Translate(Vector3.right * step);
+
+        }
+
+        // Up movement
+        if (Input.GetKey(KeyCode.E))
+        {
+            // Debug.Log("X key was pressed.");
+            if(checkBounds())
+                transform.Translate(Vector3.up * step);
+        }
+
+        // Down movement
+        if (Input.GetKey(KeyCode.Q))
+        {
+            // Debug.Log("X key was pressed.");
+            if(checkBounds())
+                transform.Translate(Vector3.down * step);
+        }
+
+
+        // Reset position
         if (Input.GetKey(KeyCode.Space))
         {
             resetPosition();
             // Debug.Log("The Ear Reset");
         }
-            // Debug.Log(transform.localPosition.z.ToString() + ", " + transform.localPosition.x.ToString());
         
-        // freezing the position
-
             transform.rotation = cameraTransform.rotation;
 
     }  
