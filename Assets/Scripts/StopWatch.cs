@@ -1,25 +1,57 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Timerexample : MonoBehaviour
+public class StopWatch : MonoBehaviour
 {
-
-    float cntdnw = 30.0f;
+    bool timerActive = false;
+    float currentTime;
     public Text disvar;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+
+        currentTime = 0;
+
+
+
+    }
+
+    // Update is called once per frame
     void Update()
     {
-        if (cntdnw > 0)
+        if (Input.GetKeyUp(KeyCode.M))
         {
-            cntdnw -= Time.deltaTime;
+            StartTimer();
         }
-        double b = System.Math.Round(cntdnw, 2);
-        disvar.text = b.ToString();
-        if (cntdnw < 0)
+
+        if (Input.GetKeyUp(KeyCode.N))
         {
-            Debug.Log("Completed");
+            StopTimer();
         }
+
+
+        if (timerActive == true)
+        {
+            currentTime += Time.deltaTime;
+        }
+
+        TimeSpan time = TimeSpan.FromSeconds(currentTime);
+        disvar.text = time.ToString(@"mm\:ss\:fff");
+
+
     }
+
+    public void StartTimer()
+    {
+        timerActive = true;
+    }
+    public void StopTimer()
+    {
+        timerActive &= false;   
+    }
+
 }
