@@ -17,7 +17,7 @@ public class PlayOnColision : MonoBehaviour
     // Update is called once per frame
     void OnCollisionEnter() 
     {
-        GetComponent<AudioSource> ().Play ();
+        GetComponent<AudioSource> ().Play();
     }
         
 }
