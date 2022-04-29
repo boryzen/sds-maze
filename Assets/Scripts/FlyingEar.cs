@@ -2,43 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class FlyingEar : MonoBehaviour
 {
     public float earSpeed;
 
     public float maxRadius;
 
-    [Header("Camera position")]
+    [Header("Parent")]
 
-    public Transform cameraTransform;
+    public Transform parent;
    
     // [Header("Key binds")]
     // //  public Input keyUp;
-
-    // // Input key binds for the "flying ear"
-    // public float up; 
-    // public float down;
-    // public float left;
-    // public float right;
     
     private float maxRadiusSq;
 
     // Start is called before the first frame update
 
+    private bool canMoveFlag = true;
+    
     void Start()
     {
-        resetPosition();
+        // updateTransform(orientationTransform);
+        // resetPosition();
         maxRadiusSq = maxRadius*maxRadius;
+        transform.parent = parent;
+        
         
     }
 
     // Update is called once per frame
     void Update()
     {   
+
+        
         float step = Time.deltaTime * earSpeed;
         
         // Forward movement
-        if (Input.GetKey(KeyCode.Alpha2))
+        if (Input.GetKey(KeyCode.Alpha2) && canMoveFlag)
         {
             // Debug.Log("2 key was pressed.");
             if(checkBounds())
@@ -47,47 +49,12 @@ public class FlyingEar : MonoBehaviour
             // Back movement
         }
 
-        if (Input.GetKey(KeyCode.X))
+        if (Input.GetKey(KeyCode.X) && canMoveFlag)
         {
             // Debug.Log("X key was pressed.");
             if(checkBounds())
                 transform.Translate(Vector3.back * step);
         }
-
-
-        // Left movement
-        if (Input.GetKey(KeyCode.Alpha1))
-        {
-            // Debug.Log("Q key was pressed.");
-             if(checkBounds())
-                transform.Translate(Vector3.left * step);
-        }
-
-        // Right movement
-        if (Input.GetKey(KeyCode.Alpha3))
-        {
-            // Debug.Log("E key was pressed.");
-            if(checkBounds())
-                transform.Translate(Vector3.right * step);
-
-        }
-
-        // Up movement
-        if (Input.GetKey(KeyCode.E))
-        {
-            // Debug.Log("X key was pressed.");
-            if(checkBounds())
-                transform.Translate(Vector3.up * step);
-        }
-
-        // Down movement
-        if (Input.GetKey(KeyCode.Q))
-        {
-            // Debug.Log("X key was pressed.");
-            if(checkBounds())
-                transform.Translate(Vector3.down * step);
-        }
-
 
         // Reset position
         if (Input.GetKey(KeyCode.Space))
@@ -96,13 +63,29 @@ public class FlyingEar : MonoBehaviour
             // Debug.Log("The Ear Reset");
         }
         
-            transform.rotation = cameraTransform.rotation;
+            // transform.rotation = cameraTransform.rotation;
+        if (Input.GetKeyDown(KeyCode.F))
+        {   
+            if(transform.parent != null)
+            {   transform.parent = null;
+                canMoveFlag = false;
+            }
+            else
+            {
+                transform.parent = parent;
+                resetPosition();
+                canMoveFlag = true;
+            }
+
+        }
+        if(transform.parent == null)
+            transform.rotation = parent.rotation;
 
     }  
     // Resets theposition of the ear to the position of the camera
     void resetPosition()
     {
-        transform.position = cameraTransform.position;
+        transform.position = parent.position;
     }
 
     //chacking if the the radius is out of bounds
@@ -116,5 +99,12 @@ public class FlyingEar : MonoBehaviour
             Debug.Log("Ear out of bounds");
             return false;
         }
+    }
+
+    void updateTransform(Transform tran)
+    {
+        transform.position = tran.position;
+        transform.rotation = tran.rotation;
+    
     }
 }
