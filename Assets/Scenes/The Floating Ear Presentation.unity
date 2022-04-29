@@ -587,7 +587,7 @@ AudioSource:
   Spatialize: 1
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 5
   Pan2D: 0
@@ -624,7 +624,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -945,7 +945,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2188,9 +2188,9 @@ GameObject:
   - component: {fileID: 1318317661}
   - component: {fileID: 1318317664}
   - component: {fileID: 1318317663}
-  - component: {fileID: 1318317666}
   - component: {fileID: 1318317662}
   - component: {fileID: 1318317665}
+  - component: {fileID: 1318317666}
   m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
@@ -2375,8 +2375,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!64 &1318317666
-MeshCollider:
+--- !u!136 &1318317666
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2385,10 +2385,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 22
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Radius: 0.50000006
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 9.313226e-10}
 --- !u!1 &1333524310
 GameObject:
   m_ObjectHideFlags: 0

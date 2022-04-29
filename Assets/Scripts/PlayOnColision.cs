@@ -15,8 +15,9 @@ public class PlayOnColision : MonoBehaviour
     }
 
     // Update is called once per frame
-    void OnCollisionEnter() 
-    {
+    private void OnTriggerEnter(UnityEngine.Collider collision) 
+    {   
+        Debug.Log("Triggered");
         GetComponent<AudioSource> ().Play();
     }
         
