@@ -195,6 +195,10 @@ PrefabInstance:
       propertyPath: MinDistance
       value: 1.4260025
       objectReference: {fileID: 0}
+    - target: {fileID: -3874538868256489920, guid: 850205124263c924ea0aa82f0fdf2673, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 159624, guid: 850205124263c924ea0aa82f0fdf2673, type: 3}
       propertyPath: m_Name
       value: CoinPrefab (4)
@@ -205,7 +209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 429828, guid: 850205124263c924ea0aa82f0fdf2673, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.4
+      value: -6.1045265
       objectReference: {fileID: 0}
     - target: {fileID: 429828, guid: 850205124263c924ea0aa82f0fdf2673, type: 3}
       propertyPath: m_LocalPosition.y
@@ -213,7 +217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 429828, guid: 850205124263c924ea0aa82f0fdf2673, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -24
+      value: -31.270546
       objectReference: {fileID: 0}
     - target: {fileID: 429828, guid: 850205124263c924ea0aa82f0fdf2673, type: 3}
       propertyPath: m_LocalRotation.w
@@ -407,7 +411,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Test
+  m_Text: 
 --- !u!222 &238322945
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -557,6 +561,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1618468041}
     m_Modifications:
+    - target: {fileID: -3874538868256489920, guid: 850205124263c924ea0aa82f0fdf2673, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 159624, guid: 850205124263c924ea0aa82f0fdf2673, type: 3}
       propertyPath: m_Name
       value: CoinPrefab
@@ -706,6 +714,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 466800, guid: 6414ea9cfa2ccc24a95c775ffa926968, type: 3}
   m_PrefabInstance: {fileID: 455138710}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &478142939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478142937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7abce360e8bcdf46abb39d6f90038c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &478142944
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1214,6 +1234,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1618468041}
     m_Modifications:
+    - target: {fileID: -3874538868256489920, guid: 850205124263c924ea0aa82f0fdf2673, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 159624, guid: 850205124263c924ea0aa82f0fdf2673, type: 3}
       propertyPath: m_Name
       value: CoinPrefab (2)
@@ -1672,6 +1696,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1618468041}
     m_Modifications:
+    - target: {fileID: -3874538868256489920, guid: 850205124263c924ea0aa82f0fdf2673, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 159624, guid: 850205124263c924ea0aa82f0fdf2673, type: 3}
       propertyPath: m_Name
       value: CoinPrefab (3)
@@ -1873,6 +1901,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1618468041}
     m_Modifications:
+    - target: {fileID: -3874538868256489920, guid: 850205124263c924ea0aa82f0fdf2673, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 159624, guid: 850205124263c924ea0aa82f0fdf2673, type: 3}
       propertyPath: m_Name
       value: CoinPrefab (1)
@@ -2137,7 +2169,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921629285}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52166cc3798674f4091b41a64b6ebb59, type: 3}
   m_Name: 

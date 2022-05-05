@@ -17,7 +17,10 @@ public class GameEvents : MonoBehaviour
     public void GoalTrigger()
     {
         if (onCollisionChangeText != null)
-        { onCollisionChangeText(); }
+        { 
+            onCollisionChangeText();
+           
+        }
     }
 
 

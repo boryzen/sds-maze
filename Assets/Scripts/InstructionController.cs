@@ -5,13 +5,13 @@ using UnityEngine;
 public class InstructionController : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
-    {
-        GameEvents.instance.onCollisionChangeText += ChangeInstruction;
-    }
 
-    private void ChangeInstruction()
+    private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            GameEvents.instance.GoalTrigger();
+        }
 
     }
 }
