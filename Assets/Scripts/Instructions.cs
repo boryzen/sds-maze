@@ -33,6 +33,26 @@ public class Instructions : MonoBehaviour
                 "The coins works as a audio beacon, revealing a coin sound\n" +
                 "Notice how the sound level increases as you get closer\n" +
                 "Find the 1st coin around the corner "); }
+	if (goalCounter == 2) { 
+            disvar.text = ("The goal of this game is to find the coins \n" +
+                "The coins works as a audio beacon, revealing a coin sound\n" +
+                "Notice how the sound level increases as you get closer\n" +
+                "Find the 1st coin around the corner "); }
+	if (goalCounter == 2) { 
+            disvar.text = ("The \"ear\" of the player is moveable, and can pass trough walls. \n"+
+            "It is designed to help the player locate the position of the coins faster. \n"	+
+            "Ear control: \n" +
+            "2 - forward \n" +
+            "x - back \n" +
+            "f - freeze/unfreeze \n "+
+            "space - reset	 "); }
+    if (goalCounter < 3) {
+            disvar.text = ("Find the rest of the coins \n" +
+            "Ear control: \n" +
+            "2 - forward \n" +
+            "x - back \n" +
+            "f - freeze/unfreeze \n "+
+            "space - reset     "); }
         
     }
 }
