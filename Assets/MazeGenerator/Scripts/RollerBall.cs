@@ -21,20 +21,7 @@ public class RollerBall : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		if (mRigidBody != null) {
-			if (Input.GetButton ("Horizontal")) {
-				mRigidBody.AddTorque(Vector3.back * Input.GetAxis("Horizontal")*10);
-			}
-			if (Input.GetButton ("Vertical")) {
-				mRigidBody.AddTorque(Vector3.right * Input.GetAxis("Vertical")*10);
-			}
-			if (Input.GetButtonDown("Jump")) {
-				if(mAudioSource != null && JumpSound != null){
-					mAudioSource.PlayOneShot(JumpSound);
-				}
-				mRigidBody.AddForce(Vector3.up*200);
-			}
-		}
+
 		if (ViewCamera != null) {
 			Vector3 direction = (Vector3.up*2+Vector3.back)*2;
 			RaycastHit hit;
@@ -54,11 +41,18 @@ public class RollerBall : MonoBehaviour {
 			if (mAudioSource != null && HitSound != null && coll.relativeVelocity.y > .5f) {
 				mAudioSource.PlayOneShot (HitSound, coll.relativeVelocity.magnitude);
 			}
-		} else {
+        }
+        else
+        {
 			if (mAudioSource != null && HitSound != null && coll.relativeVelocity.magnitude > 2f) {
 				mAudioSource.PlayOneShot (HitSound, coll.relativeVelocity.magnitude);
 			}
-		}
+
+        }
+
+
+
+		
 	}
 
 	void OnCollisionExit(Collision coll){
@@ -66,13 +60,17 @@ public class RollerBall : MonoBehaviour {
 			mFloorTouched = false;
 		}
 	}
-
-	void OnTriggerEnter(Collider other) {
-		if (other.gameObject.tag.Equals ("Coin")) {
-			if(mAudioSource != null && CoinSound != null){
-				mAudioSource.PlayOneShot(CoinSound);
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.tag.Equals("Player"))
+		{
+			if (mAudioSource != null && JumpSound != null)
+			{
+				mAudioSource.PlayOneShot(JumpSound);
+				Destroy(gameObject);
 			}
-			Destroy(other.gameObject);
+
 		}
 	}
+
 }
