@@ -62,7 +62,7 @@ public class RollerBall : MonoBehaviour {
 	}
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.tag.Equals("Player"))
+		if (other.gameObject.CompareTag("Player"))
 		{
 			if (mAudioSource != null && JumpSound != null)
 			{
