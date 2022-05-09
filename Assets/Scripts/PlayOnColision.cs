@@ -15,10 +15,11 @@ public class PlayOnColision : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void OnTriggerEnter(UnityEngine.Collider collision) 
+    private void OnTriggerStay(UnityEngine.Collider collision) 
     {   
         Debug.Log("Triggered");
-        GetComponent<AudioSource> ().Play();
+        if(!GetComponent<AudioSource>().isPlaying)
+            GetComponent<AudioSource>().Play();
     }
         
 }

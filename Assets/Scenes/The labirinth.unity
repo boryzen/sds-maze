@@ -151,7 +151,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1369379967}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &330832122
 GameObject:
@@ -740,8 +740,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.96, z: 0}
   m_LocalScale: {x: 0.87331665, y: 1.71094, z: 1.01}
   m_Children:
-  - {fileID: 322009266}
   - {fileID: 2138828783}
+  - {fileID: 322009266}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -907,6 +907,7 @@ MonoBehaviour:
   earSpeed: 10
   maxRadius: 100
   parent: {fileID: 2138828783}
+  camera: {fileID: 322009266}
 --- !u!4 &1772612157
 Transform:
   m_ObjectHideFlags: 0
@@ -996,15 +997,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867230271}
   m_LocalRotation: {x: -0, y: -0.0060847267, z: -0, w: 0.99998146}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.43636, y: 0.4506, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 9.2635e-10}
+  m_LocalScale: {x: 0.87500775, y: 0.4506, z: 0.8091}
   m_Children: []
   m_Father: {fileID: 1772612157}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -0.697, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.9757e-11, y: -0}
+  m_AnchoredPosition: {x: 3.9747e-11, y: -0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1867230273
@@ -1018,8 +1019,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.786
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1115,7 +1116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc262e35f5edd344bb18f496819b576b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 5917414ddc174b54e893c03f8ef467ba, type: 3}
+  clip: {fileID: 8300000, guid: 43ff0bd23c413ed42a8fab66503cf146, type: 3}
 --- !u!64 &1867230275
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1207,5 +1208,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1369379967}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
