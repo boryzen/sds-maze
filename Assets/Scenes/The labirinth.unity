@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -997,15 +997,15 @@ RectTransform:
   m_GameObject: {fileID: 1867230271}
   m_LocalRotation: {x: -0, y: -0.0060847267, z: -0, w: 0.99998146}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 1}
+  m_LocalScale: {x: 1.43636, y: 0.4506, z: 1}
   m_Children: []
   m_Father: {fileID: 1772612157}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -0.697, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 2.9757e-11, y: -0}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1867230273
 AudioSource:
@@ -1115,7 +1115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc262e35f5edd344bb18f496819b576b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 791038289f77142cd85da20ad0d06e6a, type: 3}
+  clip: {fileID: 8300000, guid: 5917414ddc174b54e893c03f8ef467ba, type: 3}
 --- !u!64 &1867230275
 MeshCollider:
   m_ObjectHideFlags: 0
