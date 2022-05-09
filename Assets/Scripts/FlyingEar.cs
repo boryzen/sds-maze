@@ -12,7 +12,7 @@ public class FlyingEar : MonoBehaviour
     [Header("Parent")]
 
     public Transform parent;
-   
+    public Transform camera;
     // [Header("Key binds")]
     // //  public Input keyUp;
     
@@ -60,6 +60,8 @@ public class FlyingEar : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             resetPosition();
+            transform.parent = parent;
+            canMoveFlag = true;
             // Debug.Log("The Ear Reset");
         }
         
@@ -85,7 +87,7 @@ public class FlyingEar : MonoBehaviour
     // Resets theposition of the ear to the position of the camera
     void resetPosition()
     {
-        transform.position = parent.position;
+        transform.position = camera.position;
     }
 
     //chacking if the the radius is out of bounds
@@ -99,12 +101,5 @@ public class FlyingEar : MonoBehaviour
             Debug.Log("Ear out of bounds");
             return false;
         }
-    }
-
-    void updateTransform(Transform tran)
-    {
-        transform.position = tran.position;
-        transform.rotation = tran.rotation;
-    
     }
 }
