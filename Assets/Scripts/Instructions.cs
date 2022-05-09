@@ -11,6 +11,10 @@ public class Instructions : MonoBehaviour
     private int goalCounter = 0;
 
     public Text disvar;
+
+    public ChildCount ChildCount;
+    private int myInt;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +26,11 @@ public class Instructions : MonoBehaviour
             "\n" +
             "Move to the first goal object: The beach ball");
         GameEvents.instance.onCollisionChangeText += ChangeInstruction;
+    }
+
+    private void Update()
+    {
+        myInt = int.Parse(ChildCount.childCounter);
     }
 
     private void ChangeInstruction()
@@ -44,6 +53,7 @@ public class Instructions : MonoBehaviour
             "space - reset	 "); }
     if (goalCounter > 2) {
             disvar.text = ("Find the rest of the coins \n" +
+            "Coins left: "+   + 
             "Ear control: \n" +
             "2 - forward \n" +
             "x - back \n" +

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class StopWatch : MonoBehaviour
 {
     bool timerActive = false;
-    float currentTime;
+    public float currentTime;
     //public Text disvar;
 
     // Start is called before the first frame update
@@ -31,7 +31,7 @@ public class StopWatch : MonoBehaviour
             currentTime += Time.deltaTime;
         }
 
-  //      TimeSpan time = TimeSpan.FromSeconds(currentTime);
+      //  TimeSpan time = TimeSpan.FromSeconds(currentTime);
   //      disvar.text = time.ToString(@"mm\:ss\:fff");
 
 
