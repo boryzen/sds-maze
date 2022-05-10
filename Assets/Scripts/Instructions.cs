@@ -30,7 +30,7 @@ public class Instructions : MonoBehaviour
 
     private void Update()
     {
-        myInt = int.Parse(ChildCount.childCounter);
+        myInt = (ChildCount.childCounter);
     }
 
     private void ChangeInstruction()
@@ -53,7 +53,7 @@ public class Instructions : MonoBehaviour
             "space - reset	 "); }
     if (goalCounter > 2) {
             disvar.text = ("Find the rest of the coins \n" +
-            "Coins left: "+   + 
+            "Coins left: %d"+ myInt + 
             "Ear control: \n" +
             "2 - forward \n" +
             "x - back \n" +
