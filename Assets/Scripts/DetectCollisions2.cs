@@ -9,9 +9,15 @@ public class DetectCollisions2 : MonoBehaviour
     public AudioClip audioClip = null;
 
     public AudioSource source;
+
+    public AudioClip audioClip2;
+
     void Start()
     {
         source.clip = audioClip;
+
+        GetComponent<AudioSource>().playOnAwake = false;
+        GetComponent<AudioSource>().clip = audioClip2;
     }
 
     // Update is called once per frame
@@ -22,9 +28,9 @@ public class DetectCollisions2 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Coin")
-            source.Play();
-            
+        if(other.gameObject.tag == "Coin" || other.gameObject.tag == "Ball")
+            GetComponent<AudioSource>().Play();
+
     }
 
 

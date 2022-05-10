@@ -66,7 +66,7 @@ public class RollerBall : MonoBehaviour {
 		{
 			if (mAudioSource != null && JumpSound != null)
 			{
-				mAudioSource.PlayOneShot(JumpSound);
+				//audioSource.PlayOneShot(JumpSound);
 				Destroy(gameObject);
 			}
 
