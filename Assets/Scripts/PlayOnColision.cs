@@ -17,9 +17,9 @@ public class PlayOnColision : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerStay(UnityEngine.Collider collision) 
     {   
-        Debug.Log("Triggered");
-        if(!GetComponent<AudioSource>().isPlaying)
-            GetComponent<AudioSource>().Play();
+        if(collision.gameObject.tag == "Wall")
+            if(!GetComponent<AudioSource>().isPlaying)
+                GetComponent<AudioSource>().Play();
     }
         
 }

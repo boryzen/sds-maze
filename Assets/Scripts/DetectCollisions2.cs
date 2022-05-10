@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DetectCollisions : MonoBehaviour
+public class DetectCollisions2 : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -22,8 +22,8 @@ public class DetectCollisions : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
-            Destroy(gameObject);
+        if(other.gameObject.tag == "Coin")
+            source.Play();
             
     }
 
