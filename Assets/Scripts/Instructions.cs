@@ -51,7 +51,7 @@ public class Instructions : MonoBehaviour
             "x - back \n" +
             "f - freeze/unfreeze \n "+
             "space - reset	 "); }
-        if (goalCounter > 2 || goalCounter != 7)
+        if (goalCounter > 2 && goalCounter != 7)
         {
             disvar.text = ("Find the rest of the coins \n" +
             "Coins left: "+ myInt + "\n" +

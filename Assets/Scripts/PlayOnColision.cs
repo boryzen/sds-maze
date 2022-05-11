@@ -7,6 +7,8 @@ public class PlayOnColision : MonoBehaviour
 
     [Header("Add the audio clip")]
     public AudioClip clip;
+
+    private bool leftWallTester = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +17,22 @@ public class PlayOnColision : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void OnTriggerStay(UnityEngine.Collider collision) 
-    {   
-        if(collision.gameObject.tag == "Wall")
-            if(!GetComponent<AudioSource>().isPlaying)
-                GetComponent<AudioSource>().Play();
+    private void OnTriggerEnter(UnityEngine.Collider collision) 
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            if (leftWallTester)
+            {
+                leftWallTester = false;
+                if (!GetComponent<AudioSource>().isPlaying)
+                {
+                    GetComponent<AudioSource>().Play();
+                }
+            }
+        }
     }
-        
+    private void OnTriggerExit(UnityEngine.Collider collision)
+    {
+        leftWallTester = true;
+    }
 }
