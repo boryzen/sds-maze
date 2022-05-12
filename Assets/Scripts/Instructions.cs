@@ -44,9 +44,8 @@ public class Instructions : MonoBehaviour
                 "Find the 1st coin around the corner "); }
 
 	if (goalCounter == 2) { 
-            disvar.text = ("The \"ear\" of the player is moveable, and can pass trough walls. \n"+
-            "It is designed to help the player locate the position of the coins faster. \n"	+
-            "Ear control: \n" +
+            disvar.text = 
+            ("Ear control: \n" +
             "2 - forward \n" +
             "x - back \n" +
             "f - freeze/unfreeze \n "+

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43691432, g: 0.48457855, b: 0.5648345, a: 1}
+  m_IndirectSpecularColor: {r: 0.4369141, g: 0.4845782, b: 0.56483394, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1123,6 +1123,7 @@ GameObject:
   - component: {fileID: 494399597}
   - component: {fileID: 494399599}
   - component: {fileID: 494399598}
+  - component: {fileID: 494399600}
   m_Layer: 5
   m_Name: Body
   m_TagString: Untagged
@@ -1188,6 +1189,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 494399596}
   m_CullTransparentMesh: 1
+--- !u!114 &494399600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494399596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6605e51b923a4f3f84ef9e60ed673c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disvar: {fileID: 1445069048}
 --- !u!1 &607183076
 GameObject:
   m_ObjectHideFlags: 0
@@ -3031,16 +3045,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Ear control:
-
-    2 - forward
-
-    x - back
-
-    f - freeze/unfreeze
-
-    space
-    - reset'
+  m_Text: 
 --- !u!222 &1445069049
 CanvasRenderer:
   m_ObjectHideFlags: 0
