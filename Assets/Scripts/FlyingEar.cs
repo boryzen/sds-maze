@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 
@@ -15,35 +16,35 @@ public class FlyingEar : MonoBehaviour
     public Transform camera;
     // [Header("Key binds")]
     // //  public Input keyUp;
-    
+
     private float maxRadiusSq;
 
     // Start is called before the first frame update
 
     private bool canMoveFlag = true;
-    
+
     void Start()
     {
         // updateTransform(orientationTransform);
         // resetPosition();
-        maxRadiusSq = maxRadius*maxRadius;
+        maxRadiusSq = maxRadius * maxRadius;
         transform.parent = parent;
-        
-        
+
+
     }
 
     // Update is called once per frame
     void Update()
-    {   
+    {
 
-        
+
         float step = Time.deltaTime * earSpeed;
-        
+
         // Forward movement
         if (Input.GetKey(KeyCode.Alpha2) && canMoveFlag)
         {
             // Debug.Log("2 key was pressed.");
-            if(checkBounds())
+            if (checkBounds())
                 transform.Translate(Vector3.forward * step);
 
             // Back movement
@@ -52,7 +53,7 @@ public class FlyingEar : MonoBehaviour
         if (Input.GetKey(KeyCode.X) && canMoveFlag)
         {
             // Debug.Log("X key was pressed.");
-            if(checkBounds())
+            if (checkBounds())
                 transform.Translate(Vector3.back * step);
         }
 
@@ -64,12 +65,13 @@ public class FlyingEar : MonoBehaviour
             canMoveFlag = true;
             // Debug.Log("The Ear Reset");
         }
-        
-            // transform.rotation = cameraTransform.rotation;
+
+        // transform.rotation = cameraTransform.rotation;
         if (Input.GetKeyDown(KeyCode.F))
-        {   
-            if(transform.parent != null)
-            {   transform.parent = null;
+        {
+            if (transform.parent != null)
+            {
+                transform.parent = null;
                 canMoveFlag = false;
             }
             else
@@ -79,11 +81,22 @@ public class FlyingEar : MonoBehaviour
                 canMoveFlag = true;
             }
 
-        }
-        if(transform.parent == null)
-            transform.rotation = parent.rotation;
 
-    }  
+            if (transform.parent == null)
+            {
+                transform.rotation = parent.rotation;
+            }
+        }
+
+        if (!Input.GetKeyDown(KeyCode.N))
+        {
+            return;
+        }
+        Scene2();
+
+
+
+    }
     // Resets theposition of the ear to the position of the camera
     void resetPosition()
     {
@@ -101,5 +114,10 @@ public class FlyingEar : MonoBehaviour
             Debug.Log("Ear out of bounds");
             return false;
         }
+    }
+
+    private static void Scene2()
+    {
+        SceneManager.LoadScene("The labirinth");
     }
 }
