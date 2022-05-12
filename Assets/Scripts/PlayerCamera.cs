@@ -9,13 +9,15 @@ public class PlayerCamera : MonoBehaviour
 
     public Transform orientation;
 
-    float xRotation;
-    float yRotation;
+    private float xRotation;
+    private float yRotation;
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        // transform.rotation = Quaternion.Euler(90,90,90);
+        // orientation.rotation = Quaternion.Euler(90,90,90);
     }
 
     private void Update()
@@ -26,7 +28,7 @@ public class PlayerCamera : MonoBehaviour
         yRotation += mouseX;
         
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90);
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);

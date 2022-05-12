@@ -8,7 +8,7 @@ public class FlyingEar : MonoBehaviour
     public float earSpeed;
 
     public float maxRadius;
-
+    public bool earActive;
     [Header("Parent")]
 
     public Transform parent;
@@ -35,7 +35,7 @@ public class FlyingEar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-
+        if(earActive){
         
         float step = Time.deltaTime * earSpeed;
         
@@ -82,7 +82,7 @@ public class FlyingEar : MonoBehaviour
         }
         if(transform.parent == null)
             transform.rotation = parent.rotation;
-
+        }
     }  
     // Resets theposition of the ear to the position of the camera
     void resetPosition()
