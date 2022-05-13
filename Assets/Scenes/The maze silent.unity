@@ -1529,7 +1529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   earSpeed: 10
   maxRadius: 100
-  earActive: 0
+  earActive: 1
   parent: {fileID: 1635252162}
   camera: {fileID: 705697264}
 --- !u!1 &877172494
@@ -2401,7 +2401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9aa3b0d34fcd1c488989cda16fe6968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 311bde2d611c7744e9b87713df344dd4, type: 3}
+  audioClip: {fileID: 8300000, guid: 5ea220a03a7a593469eb9b578d23ff42, type: 3}
   source: {fileID: 287176092}
 --- !u!114 &1439119556
 MonoBehaviour:
@@ -3464,11 +3464,11 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: ff2262abfc58343b287c24b6c95376dd, type: 2}
   m_audioClip: {fileID: 8300000, guid: 257010bafc7694b4a97b99f1b8a6e820, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.428
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
+  Spatialize: 1
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
