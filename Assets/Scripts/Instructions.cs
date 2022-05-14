@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class Instructions : MonoBehaviour
 {
+    StopWatch stopWatch;
 
     private int goalCounter = 0;
 
@@ -18,41 +19,32 @@ public class Instructions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        disvar.text = ("Use your mouse to move head\n" +
-            "U to move forward\n" +
-            "S to move backward\n" +
-            "A to move left\n" +
-            "D to move right\n" +
-            "\n" +
-            "Move to the first goal object: The beach ball");
+        disvar.text = ("Find the the coins \n" +
+           "Coins left: " + myInt + "\n" +
+           "Ear control: \n" +
+           "2 - forward \n" +
+           "x - back \n" +
+           "f - freeze/unfreeze \n " +
+           "space - reset     ");
+
         GameEvents.instance.onCollisionChangeText += ChangeInstruction;
     }
 
     private void Update()
     {
         myInt = (ChildCount.childCounter) - 1;
+
+
+
     }
 
     private void ChangeInstruction()
     {
         goalCounter += 1;
-        Debug.Log(goalCounter);
-        if (goalCounter == 1) { 
-            disvar.text = ("The goal of this game is to find the coins \n" +
-                "The coins works as a audio beacon, revealing a coin sound\n" +
-                "Notice how the sound level increases as you get closer\n" +
-                "Find the 1st coin around the corner "); }
 
-	if (goalCounter == 2) { 
-            disvar.text = 
-            ("Ear control: \n" +
-            "2 - forward \n" +
-            "x - back \n" +
-            "f - freeze/unfreeze \n "+
-            "space - reset	 "); }
-        if (goalCounter > 2 && goalCounter != 7)
+        if (goalCounter != 7)
         {
-            disvar.text = ("Find the rest of the coins \n" +
+            disvar.text = ("Find the the coins \n" +
             "Coins left: "+ myInt + "\n" +
             "Ear control: \n" +
             "2 - forward \n" +
@@ -61,7 +53,12 @@ public class Instructions : MonoBehaviour
             "space - reset     "); }
     
         if (goalCounter == 7) {
-            disvar.text = ("GAME COMPLETED");
+            TimeSpan time = TimeSpan.FromSeconds(stopWatch.currentTime);
+            disvar.text = ("GAME COMPLETED\n" +
+            "Time:\n" +
+            time.ToString(@"mm\:ss\:fff"));
+
+
         }
     }
 }

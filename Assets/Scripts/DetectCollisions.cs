@@ -11,7 +11,11 @@ public class DetectCollisions : MonoBehaviour
     public AudioSource source;
     void Start()
     {
-        source.clip = audioClip;
+        if (!audioClip)
+        {
+            source.clip = audioClip;
+        }
+        
     }
 
     // Update is called once per frame
