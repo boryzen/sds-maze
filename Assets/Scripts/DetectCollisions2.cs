@@ -7,17 +7,11 @@ public class DetectCollisions2 : MonoBehaviour
     // Start is called before the first frame update
 
     public AudioClip audioClip = null;
-
+    public AudioClip audioClipBall = null;
     public AudioSource source;
-
-    public AudioClip audioClip2;
-
     void Start()
     {
         source.clip = audioClip;
-
-        GetComponent<AudioSource>().playOnAwake = false;
-        GetComponent<AudioSource>().clip = audioClip2;
     }
 
     // Update is called once per frame
@@ -28,9 +22,17 @@ public class DetectCollisions2 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Coin" || other.gameObject.tag == "Ball")
-            GetComponent<AudioSource>().Play();
-
+        if(other.gameObject.tag == "Coin")
+        {
+            source.clip = audioClip;
+            source.Play();
+        }
+        else if(other.gameObject.tag == "Ball")
+        {
+            source.clip = audioClipBall;
+            source.Play();
+        }
+            
     }
 
 
