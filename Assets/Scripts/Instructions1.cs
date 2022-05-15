@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
-public class Instructions : MonoBehaviour
+public class Instructions1 : MonoBehaviour
 {
     public StopWatch StopWatch;
 
@@ -19,8 +20,9 @@ public class Instructions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        disvar.text = ("Find the coins, but this time is the floating ear activated\n" +
+        disvar.text = ("For the first maze, the floating ear is deactivated\n" +
            "The timer starts when you hit the beach ball\n" +
+           "Please note your time in the questionare when completed\n"+
            "Ear control: \n" +
            "2 - forward \n" +
            "x - back \n" +
@@ -36,7 +38,14 @@ public class Instructions : MonoBehaviour
     {
         myInt = (ChildCount.childCounter) - 1;
 
-  
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            if (goalCounter == 7)
+            {
+                Scene3();
+            }
+
+        }
 
     }
 
@@ -53,20 +62,16 @@ public class Instructions : MonoBehaviour
         if (goalCounter != 7)
         {
             disvar.text = ("Find the the coins \n" +
-            "Coins left: "+ myInt + "\n" +
-            "Ear control: \n" +
-            "2 - forward \n" +
-            "x - back \n" +
-            "f - freeze/unfreeze \n "+
-            "space - reset     "); }
+            "Coins left: "+ myInt); }
     
         if (goalCounter == 7) {
             TimeSpan time = TimeSpan.FromSeconds(StopWatch.currentTime);
-            disvar.text = ("GAME COMPLETED\n" +
+            disvar.text = ("LEVEL COMPLETED\n" +
             "Time:\n" +
             time.ToString(@"mm\:ss\:fff") +
-            "\nThe game is now finished - Thanks for playing\n" +
-            "Please note your times in the questionary");
+            "\nThe level is now finished\n" +
+            "Please note your time in the questionary\n"+
+            "Press <N> for the next level");
 
           
             StopWatch.StopTimer();
@@ -76,5 +81,8 @@ public class Instructions : MonoBehaviour
 
         }
     }
-
+    private static void Scene3()
+    {
+        SceneManager.LoadScene("The labirinth");
+    }
 }

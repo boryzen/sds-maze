@@ -117,7 +117,7 @@ public class InstructionsIntro : MonoBehaviour
 
     private static void Scene2()
     {
-        SceneManager.LoadScene("The labirinth");
+        SceneManager.LoadScene("The maze silent");
     }
 }
 

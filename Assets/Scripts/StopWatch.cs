@@ -7,16 +7,16 @@ using UnityEngine.UI;
 public class StopWatch : MonoBehaviour
 {
     bool timerActive = false;
-    public float currentTime;
+    public float currentTime = 0;
     //public Text disvar;
 
     // Start is called before the first frame update
     void Start()
     {
 
-        currentTime = 0;
+        
 
-        StartTimer();
+       //StartTimer();
 
     }
 
@@ -29,6 +29,7 @@ public class StopWatch : MonoBehaviour
         if (timerActive == true)
         {
             currentTime += Time.deltaTime;
+            
         }
 
       //  TimeSpan time = TimeSpan.FromSeconds(currentTime);
@@ -40,10 +41,12 @@ public class StopWatch : MonoBehaviour
     public void StartTimer()
     {
         timerActive = true;
+        Debug.Log("StartTimer");
     }
     public void StopTimer()
     {
-        timerActive &= false;   
+        timerActive &= false;
+        Debug.Log("StopTimer");
     }
 
 }
