@@ -537,14 +537,14 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Use your mouse to rotate and move your head
 
-    <U> to move forward
+    <U> - Forward
 
     <S>
-    to move backward
+    - Backward
 
-    <A> to move left
+    <A> - Left
 
-    <D> to move right'
+    <D> - Right'
 --- !u!222 &214334371
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1072,7 +1072,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Try to move the ear closer to audio beacons in this scene behind the wall.
     The Ear \"blings\" when you pass a wall, so you can count the walls between you
-    and the goal.\nEar control: \n<2> - Forward\n<x> Back\n<f> Freeze/Unfreeze\n<space>
+    and the goal.\nEar control: \n<2> - Forward\n<x> - Backward\n<F> - Freeze/Unfreeze\n<Space>
     - Attach Ear To Body"
 --- !u!222 &439793098
 CanvasRenderer:
