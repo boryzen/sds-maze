@@ -36,7 +36,12 @@ public class Instructions : MonoBehaviour
     {
         myInt = (ChildCount.childCounter) - 1;
 
-  
+        
+    if (Input.GetKey("escape"))
+    {
+        Application.Quit();
+    }
+        
 
     }
 
@@ -66,7 +71,8 @@ public class Instructions : MonoBehaviour
             "Time:\n" +
             time.ToString(@"mm\:ss\:fff") +
             "\nThe game is now finished - Thanks for playing\n" +
-            "Please note your times in the questionary");
+            "Please note your times in the questionary\n\n"+
+            "Press <esc> to exit the game");
 
           
             StopWatch.StopTimer();
@@ -75,6 +81,8 @@ public class Instructions : MonoBehaviour
             
 
         }
+
+
     }
 
 }
