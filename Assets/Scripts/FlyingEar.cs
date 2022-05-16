@@ -88,14 +88,6 @@ public class FlyingEar : MonoBehaviour
             }
         }
 
-        if (!Input.GetKeyDown(KeyCode.N))
-        {
-            return;
-        }
-        Scene2();
-
-
-
     }
     // Resets theposition of the ear to the position of the camera
     void resetPosition()
@@ -116,8 +108,4 @@ public class FlyingEar : MonoBehaviour
         }
     }
 
-    private static void Scene2()
-    {
-        SceneManager.LoadScene("The labirinth");
-    }
 }
