@@ -101,6 +101,7 @@ public class FlyingEar : MonoBehaviour
     void resetPosition()
     {
         transform.position = camera.position;
+        transform.rotation = camera.rotation;
     }
 
     //chacking if the the radius is out of bounds
