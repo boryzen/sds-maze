@@ -35,11 +35,11 @@ public class InstructionsIntro : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            pageCounter += pageCounter;
+            pageCounter += 1;
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            pageCounter = pageCounter-1;
+            pageCounter -= 1;
         }
         if (pageCounter < 1)
         {
