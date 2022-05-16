@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4369141, g: 0.4845782, b: 0.56483394, a: 1}
+  m_IndirectSpecularColor: {r: 0.43691432, g: 0.48457855, b: 0.5648345, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -207,13 +207,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'When you''re ready for a run trough the labirinth, press <N>.
-
-
-    Press
-    <E> to scroll to next page
-
-    Press <Q> to scroll to previous page'
+  m_Text: When you're ready for a run trough the labirinth, press <N>
 --- !u!222 &59356829
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -550,13 +544,7 @@ MonoBehaviour:
 
     <A> to move left
 
-    <D> to move right
-
-
-    Press <E>
-    to scroll to next page
-
-    Press <Q> to scroll to previous page'
+    <D> to move right'
 --- !u!222 &214334371
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1082,10 +1070,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Try to move the ear closer to audio beacons in this scene behind the wall.\nEar
-    control: \n<2> - Forward\n<x> Back\n<f> Freeze/Unfreeze\n<space> - Attach Ear
-    To Body\n\nPress <E> to scroll to next page\nPress <Q> to scroll to previous
-    page\n\n\n"
+  m_Text: "Try to move the ear closer to audio beacons in this scene behind the wall.
+    The Ear \"blings\" when you pass a wall, so you can count the walls between you
+    and the goal.\nEar control: \n<2> - Forward\n<x> Back\n<f> Freeze/Unfreeze\n<space>
+    - Attach Ear To Body"
 --- !u!222 &439793098
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1762,7 +1750,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   earSpeed: 10
   maxRadius: 100
-  earActive: 1
   parent: {fileID: 209785572}
   camera: {fileID: 1125137946}
 --- !u!81 &775241085
@@ -1907,6 +1894,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803557169}
   m_CullTransparentMesh: 1
+--- !u!1 &823465342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 823465343}
+  - component: {fileID: 823465345}
+  - component: {fileID: 823465344}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &823465343
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823465342}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1375803850}
+  m_Father: {fileID: 841561928}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 49.447}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &823465344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823465342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &823465345
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823465342}
+  m_CullTransparentMesh: 1
 --- !u!1 &841561927
 GameObject:
   m_ObjectHideFlags: 0
@@ -1937,6 +2000,7 @@ RectTransform:
   m_Children:
   - {fileID: 1003140196}
   - {fileID: 494399597}
+  - {fileID: 823465343}
   m_Father: {fileID: 1830203950}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3199,6 +3263,88 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333524310}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1375803849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1375803850}
+  - component: {fileID: 1375803852}
+  - component: {fileID: 1375803851}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1375803850
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375803849}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 823465343}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -10.1106, y: 0.51}
+  m_SizeDelta: {x: 498.705, y: 33.7914}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1375803851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375803849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Press <E> to scroll to next page
+
+    Press <Q> to scroll to previous
+    page'
+--- !u!222 &1375803852
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375803849}
+  m_CullTransparentMesh: 1
 --- !u!1 &1434329791
 GameObject:
   m_ObjectHideFlags: 0
@@ -3336,9 +3482,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Welcome to the Floating Ear game\nPlease read these instructions carefully
-    before\ncontinuing to the next scene.\n   \nPress <E> to scroll to next page\nPress
-    <Q> to scroll to previous page"
+  m_Text: 'Welcome to the Floating Ear game
+
+    Please read these instructions carefully
+    before
+
+    continuing to the next scene.'
 --- !u!222 &1445069049
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3573,14 +3722,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'The goal of this game is to find the audio beacons disguised as coins
-    in a labirinth. This scene is for you to test the functionality.
-
-
-    Press
-    <E> to scroll to next page
-
-    Press <Q> to scroll to previous page'
+  m_Text: The goal of this game is to find the audio beacons disguised as coins in
+    a labirinth. This scene is for you to test the functionality.
 --- !u!222 &1481900522
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3893,8 +4036,7 @@ MonoBehaviour:
   m_Text: "The ear of the listener is movable, meaning it can be detacted from the
     body. \nThe ear can pass trough walls, and should help you locate the coins faster.
     \nWhenever you think you have located a coin with the ear, you can freeze the
-    ear on the position, and find your way to the ear. \n\nPress <E> to scroll to
-    next page\nPress <Q> to scroll to previous page\n\n       "
+    ear on the position, and find your way to the ear.        "
 --- !u!222 &1681712270
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4238,8 +4380,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -660.4296, y: 311.60318}
-  m_SizeDelta: {x: -1376.869, y: -675.216}
+  m_AnchoredPosition: {x: -660.4297, y: 314.25125}
+  m_SizeDelta: {x: -1376.869, y: -680.5123}
   m_Pivot: {x: 0.5, y: 0.49999997}
 --- !u!114 &1830203951
 MonoBehaviour:
