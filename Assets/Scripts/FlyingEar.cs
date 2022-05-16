@@ -10,6 +10,7 @@ public class FlyingEar : MonoBehaviour
 
     public float maxRadius;
 
+    public bool earActive;
     [Header("Parent")]
 
     public Transform parent;
@@ -39,7 +40,8 @@ public class FlyingEar : MonoBehaviour
 
 
         float step = Time.deltaTime * earSpeed;
-
+        if(earActive)
+        {
         // Forward movement
         if (Input.GetKey(KeyCode.Alpha2) && canMoveFlag)
         {
@@ -87,7 +89,7 @@ public class FlyingEar : MonoBehaviour
                 transform.rotation = parent.rotation;
             }
         }
-
+        }
     }
     // Resets theposition of the ear to the position of the camera
     void resetPosition()
