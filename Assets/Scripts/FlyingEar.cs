@@ -94,7 +94,11 @@ public class FlyingEar : MonoBehaviour
     // Resets theposition of the ear to the position of the camera
     void resetPosition()
     {
+        
+        if(transform.parent == null)
+            transform.parent = parent;
         transform.position = camera.position;
+        transform.rotation = parent.rotation;
     }
 
     //chacking if the the radius is out of bounds
