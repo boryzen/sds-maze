@@ -4372,6 +4372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   earSpeed: 10
   maxRadius: 100
+  earActive: 1
   parent: {fileID: 2138828783}
   camera: {fileID: 322009266}
 --- !u!4 &1772612157
