@@ -69,7 +69,7 @@ public class Instructions : MonoBehaviour
             TimeSpan time = TimeSpan.FromSeconds(StopWatch.currentTime);
             disvar.text = ("GAME COMPLETED\n" +
             "Time:\n" +
-            time.ToString(@"mm\:ss\:fff") +
+            time.ToString(@"mm\:ss") +
             "\nThe game is now finished - Thanks for playing\n" +
             "Please note your times in the questionary\n\n"+
             "Press <esc> to exit the game");

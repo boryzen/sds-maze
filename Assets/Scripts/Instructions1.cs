@@ -68,7 +68,7 @@ public class Instructions1 : MonoBehaviour
             TimeSpan time = TimeSpan.FromSeconds(StopWatch.currentTime);
             disvar.text = ("LEVEL COMPLETED\n" +
             "Time:\n" +
-            time.ToString(@"mm\:ss\:fff") +
+            time.ToString(@"mm\:ss") +
             "\nThe level is now finished\n" +
             "Please note your time in the questionary\n"+
             "Press <N> for the next level");
