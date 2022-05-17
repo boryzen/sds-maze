@@ -414,7 +414,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Use your mouse to rotate and move your head
 
-    <U> - Forward
+    <W> - Forward
 
     <S>
     - Backward
